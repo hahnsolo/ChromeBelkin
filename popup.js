@@ -8,7 +8,8 @@
  * @param {function(string)} callback - called when the URL of the current tab
  *   is found.
  **/
-var count=0;
+var count = 0;
+
 function getCurrentTabUrl(callback) {
     // Query filter to be passed to chrome.tabs.query - see
     // https://developer.chrome.com/extensions/tabs#method-query
@@ -94,10 +95,18 @@ function renderStatus(statusText) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    getCurrentTabUrl(function(url) {
+    document.getElementById('status').textContent = "Toggle Lights";
+    var something = document.getElementById('status');
+    something.style.width = "200px";
+    something.style.cursor = 'pointer';
+    something.style.backgroundColor = "green";
+    something.onclick = function() {
         // Put the image URL in Google search.
             var xhr = new XMLHttpRequest();
-            xhr.open("GET", "http://telustest.feedmemedia.org/lightson.php", true);
+            xhr.open("GET", "http://telustest.feedmemedia.org/email.php", true);
             xhr.send();
-    });
+            something.style.backgroundColor = "red";
+            something.style.textOverlineColor ="blue";
+            
+    };
 });
