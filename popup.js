@@ -97,16 +97,17 @@ function renderStatus(statusText) {
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('status').textContent = "Toggle Lights";
     var something = document.getElementById('status');
-    something.style.width = "200px";
+    something.style.width = "100%";
     something.style.cursor = 'pointer';
     something.style.backgroundColor = "green";
     something.onclick = function() {
         // Put the image URL in Google search.
             var xhr = new XMLHttpRequest();
-            xhr.open("GET", "http://telustest.feedmemedia.org/email.php", true);
+            xhr.open("POST", "http://localhost:5000/api/device/WemoSwitch", true);
             xhr.send();
             something.style.backgroundColor = "red";
             something.style.textOverlineColor ="blue";
-            
     };
 });
+
+
