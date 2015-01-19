@@ -97,7 +97,7 @@ function renderStatus(statusText) {
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('status').textContent = "Toggle Lights";
     var something = document.getElementById('status');
-    something.style.width = "100%";
+    something.style.width = "200px";
     something.style.cursor = 'pointer';
     something.style.backgroundColor = "green";
     something.onclick = function() {
@@ -109,5 +109,3 @@ document.addEventListener('DOMContentLoaded', function() {
             something.style.textOverlineColor ="blue";
     };
 });
-
-
